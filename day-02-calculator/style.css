@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --bg-color: #1a1a1a;
+  --text-color: aliceblue;
+  --bg-form: rgb(36, 53, 137);
+  --form-text: #000000;
+  --input-bg: #ffffffa2;
+  --border-color: #c78127;
+  --button-bg: #00bcd4;
+  --button-text: #1a1a1a;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--bg-form);
+  border-radius: 20px;
+  padding: 30px;
+}
+.container-title {
+  margin-bottom: 20px;
+}
+.form-group {
+  padding: 10px;
+  font-size: 20px;
+}
+.form-input {
+  border: none;
+  padding: 10px 5px;
+  border-radius: 5px;
+  background-color: var(--input-bg);
+  text-align: center;
+  max-width: 500px;
+  color: var(--form-text);
+}
+.form-input:focus {
+  outline: none;
+}
+.form-button {
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  font-size: 15px;
+  font-weight: bolder;
+}
+.form-button:hover {
+  cursor: pointer;
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
