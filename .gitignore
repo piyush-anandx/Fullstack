@@ -1,0 +1,23 @@
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node.js (Upcoming)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build Outputs
+dist/
+build/
+
+# Credentials
+.env
+.env.local
+*.pem
