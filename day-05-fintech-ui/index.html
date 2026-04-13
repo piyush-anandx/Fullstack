@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Shadow Bank Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <nav class="sidebar__nav">
+        <ul class="sidebar__items">
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">Home</a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">Payments</a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">Analytics</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <header class="header">
+      <div class="header__search">
+        <input type="search" name="" id="search" class="search" />
+      </div>
+      <div class="header__profile">
+        <img
+          src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_1280.png"
+          alt="user-profile"
+          class="profile_img"
+        />
+      </div>
+    </header>
+    <main class="dashboard">
+      <div class="card card1">
+        <p class="card_heading">Total Balance</p>
+        <p class="card_figure" id="balance-amount"></p>
+      </div>
+      <div class="card card2">
+        <p class="card_heading">Monthly Expense</p>
+        <p class="card_figure" id="expense-amount"></p>
+      </div>
+      <div class="card card3">
+        <p class="card_heading">Savings Target</p>
+        <p class="progress_figure" id="progress-figure"></p>
+        <div class="progress">
+          <div class="progress__fill"></div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
