@@ -5,21 +5,20 @@ This repository tracks my journey from a Class 12 graduate to a Senior DevOps En
 ## 🎯 Current Goal
 - **Target:** Full-Stack Developer Role (Gurugram)
 - **Deadline:** June 30, 2026
-- **Status:** Phase 1 (Recovery & Foundation)
+- **Status:** Phase 1 (The Professional Launch)
 
 ## 📁 Repository Structure
 - **/day-01-01-navbar**: Professional Refactor (BEM, CSS Vars, ARIA).
-- **/day-01-02-gallery**: Magazine Grid (Delhi Gallery, Grid-areas, Responsive).
-- **/day-01-logic**: Syntax Practice + Advanced Logic (Objects, Filters).
-- **/day-02-calculator**: Functional Discount Calculator.
-- **/day-03-logic**: Array Mastery (.map, .filter, .reduce).
-- **/day-03-product-filter**: Real-time Data Filtering UI.
-- **/day-04-logic**: Syntax Fluidity Drills.
+- **/day-01-02-gallery**: Magazine Grid (Grid-areas, Object-fit).
+- **/day-02-calculator**: Functional Logic & DOM Manipulation.
+- **/day-03-product-filter**: Array Mastery (.filter, .map) & Search Logic.
+- **/day-05-fintech-ui**: **Portfolio Killer #1** - Dark Mode Dashboard with dynamic logic.
+- **/day-05-logic**: Advanced String & Array Transformation Drills.
 
 ## 🛠️ Tech Stack
-- **Frontend:** HTML5, CSS3 (BEM, Grid, Flexbox), JavaScript (ES6+).
-- **Backend:** Node.js (Upcoming).
-- **DevOps:** Docker, AWS, Linux (Upcoming).
+- **Frontend:** HTML5 (Semantics), CSS3 (Grid, Flexbox, BEM), JavaScript (ES6+, Async).
+- **Architecture:** Understanding the OSI Model, TCP/IP, and Rendering Performance.
+- **DevOps:** Git/GitHub Workflow (Active).
 
 ---
 **"Built with discipline. Driven by a 5-year vision."**
