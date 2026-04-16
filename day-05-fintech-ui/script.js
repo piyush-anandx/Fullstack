@@ -5,6 +5,7 @@ const progressFill = document.querySelector(".progress__fill");
 const userTransactions = document.getElementById("transactions-amount");
 const overlay = document.getElementById("loading-overlay");
 const transactionsContainer = document.getElementById("transactions-container");
+const search = document.getElementById("search");
 
 const accountData = {
   balance: 125000,
@@ -14,11 +15,11 @@ const accountData = {
 };
 
 let transactions = [
-  { id: 1, type: "income", amount: 50000, category: "Salary" },
-  { id: 2, type: "expense", amount: 7000, category: "Rent" },
-  { id: 3, type: "expense", amount: 5000, category: "Grocery" },
-  { id: 4, type: "expense", amount: 500, category: "Electricity" },
-  { id: 5, type: "expense", amount: 500, category: "Recharge" },
+  { id: 1, type: "income", amount: 50000, category: "salary" },
+  { id: 2, type: "expense", amount: 7000, category: "rent" },
+  { id: 3, type: "expense", amount: 5000, category: "grocery" },
+  { id: 4, type: "expense", amount: 500, category: "electricity" },
+  { id: 5, type: "expense", amount: 500, category: "recharge" },
 ];
 
 const income = transactions.filter((t) => t.type === "income");
@@ -38,8 +39,16 @@ function renderTransactions(lists) {
     const colorText = list.type === "expense" ? "red" : "green";
     html += `<div class="card ${colorText}"><p class="card_heading">${list.category}</p><p class="card_figure">₹${list.amount}</p></div>`;
   });
-  transactionsContainer.innerHTML = html
+  transactionsContainer.innerHTML = html;
 }
+
+search.addEventListener("input", (e) => {
+  const value = e.target.value.toLowerCase();
+  const filter = transactions.filter((transaction) => {
+    return transaction.category.toLocaleLowerCase().includes(value);
+  });
+  renderTransactions(filter);
+});
 
 setTimeout(() => {
   updateDashboard(accountData);

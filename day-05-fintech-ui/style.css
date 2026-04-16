@@ -183,3 +183,9 @@ body {
 .red {
   color: var(--expense);
 }
+#transactions-container {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
