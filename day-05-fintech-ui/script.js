@@ -3,6 +3,8 @@ const userMonthlyExpense = document.getElementById("expense-amount");
 const progressPer = document.getElementById("progress-figure");
 const progressFill = document.querySelector(".progress__fill");
 const userTransactions = document.getElementById("transactions-amount");
+const overlay = document.getElementById("loading-overlay");
+const transactionsContainer = document.getElementById("transactions-container");
 
 const accountData = {
   balance: 125000,
@@ -19,6 +21,9 @@ let transactions = [
   { id: 5, type: "expense", amount: 500, category: "Recharge" },
 ];
 
+const income = transactions.filter((t) => t.type === "income");
+const expense = transactions.filter((t) => t.type === "expense");
+
 function updateDashboard(userData) {
   userBalance.textContent = `₹${userData.balance}`;
   userMonthlyExpense.textContent = `₹${userData.monthlyExpense}`;
@@ -27,6 +32,17 @@ function updateDashboard(userData) {
   userTransactions.innerHTML = `<span class="income">Income: ₹${income.reduce((sum, t) => sum + t.amount, 0)} </span>|<span class="expense"> Expense: ₹${expense.reduce((sum, t) => sum + t.amount, 0)}</span>`;
 }
 
-const income = transactions.filter((t) => t.type === "income");
-const expense = transactions.filter((t) => t.type === "expense");
-updateDashboard(accountData);
+function renderTransactions(lists) {
+  let html = "";
+  lists.map((list) => {
+    const colorText = list.type === "expense" ? "red" : "green";
+    html += `<div class="card ${colorText}"><p class="card_heading">${list.category}</p><p class="card_figure">₹${list.amount}</p></div>`;
+  });
+  transactionsContainer.innerHTML = html
+}
+
+setTimeout(() => {
+  updateDashboard(accountData);
+  overlay.classList.add("hidden");
+  renderTransactions(transactions);
+}, 2000);

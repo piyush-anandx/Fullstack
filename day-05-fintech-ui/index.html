@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="loading-overlay" class="loading-overlay">
+      <h1 class="loading-heading">Loading....</h1>
+    </div>
     <aside class="sidebar">
       <nav class="sidebar__nav">
         <ul class="sidebar__items">
@@ -54,6 +57,10 @@
           <div class="progress__fill"></div>
         </div>
       </div>
+      <section class="transactions-list card card5">
+        <h2 class="section-title">Recent Transactions</h2>
+        <div id="transactions-container"></div>
+      </section>
     </main>
     <script src="script.js"></script>
   </body>
