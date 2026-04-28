@@ -31,6 +31,10 @@ body {
 }
 .sidebar {
   grid-area: sidebar;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
 }
 .header {
   grid-area: header;
@@ -42,6 +46,8 @@ body {
 }
 .dashboard {
   grid-area: dashboard;
+  overflow-y: auto;
+  height: calc(100vh-80px);
 }
 .profile_img {
   width: 30px;
@@ -73,7 +79,11 @@ body {
   transform: scale(1.05) translateX(5px);
   text-shadow: 0 0 8px rgba(0, 255, 204, 0.7);
 }
-.search {
+.search,
+.amount,
+.category,
+.type,
+.btn-submit {
   padding: 5px;
   margin: 5px;
   border: none;
@@ -83,7 +93,10 @@ body {
   background-color: var(--bg-color);
   color: var(--primary-text);
 }
-.search:focus {
+.search:focus,
+.amount:focus,
+.category:focus,
+.type:focus {
   outline: none;
   box-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
 }
@@ -188,4 +201,11 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }

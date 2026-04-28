@@ -26,3 +26,17 @@ body {
   padding: 25px;
   border-radius: 15px;
 }
+.search {
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  text-align: left;
+  padding-left: 10px;
+  background-color: var(--bg-color);
+  color: var(--primary-text);
+}
+.search:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+}

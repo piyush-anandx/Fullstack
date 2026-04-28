@@ -6,6 +6,10 @@ const userTransactions = document.getElementById("transactions-amount");
 const overlay = document.getElementById("loading-overlay");
 const transactionsContainer = document.getElementById("transactions-container");
 const search = document.getElementById("search");
+const form = document.getElementById("form-container");
+const inputCategory = document.getElementById("category");
+const inputAmount = document.getElementById("amount");
+const inputType = document.getElementById("type");
 
 const accountData = {
   balance: 125000,
@@ -21,15 +25,32 @@ let transactions = [
   { id: 4, type: "expense", amount: 500, category: "electricity" },
   { id: 5, type: "expense", amount: 500, category: "recharge" },
 ];
-
-const income = transactions.filter((t) => t.type === "income");
-const expense = transactions.filter((t) => t.type === "expense");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const category = inputCategory.value;
+  const amount = inputAmount.value;
+  const type = inputType.value;
+  const newTx = {
+    id: Date.now(),
+    type: type,
+    amount: Number(amount),
+    category: category,
+  };
+  transactions = [...transactions, newTx];
+  renderTransactions(transactions);
+  updateDashboard(accountData);
+  form.reset();
+});
 
 function updateDashboard(userData) {
-  userBalance.textContent = `₹${userData.balance}`;
-  userMonthlyExpense.textContent = `₹${userData.monthlyExpense}`;
-  progressPer.textContent = `${(userData.currentSavings / userData.savingsTarget) * 100}% complete`;
-  progressFill.style.width = `${(userData.currentSavings / userData.savingsTarget) * 100}%`;
+  const { balance, monthlyExpense, savingsTarget, currentSavings } = userData;
+  const income = transactions.filter((t) => t.type === "income");
+  const expense = transactions.filter((t) => t.type === "expense");
+
+  userBalance.textContent = `₹${balance}`;
+  userMonthlyExpense.textContent = `₹${monthlyExpense}`;
+  progressPer.textContent = `${(currentSavings / savingsTarget) * 100}% complete`;
+  progressFill.style.width = `${(currentSavings / savingsTarget) * 100}%`;
   userTransactions.innerHTML = `<span class="income">Income: ₹${income.reduce((sum, t) => sum + t.amount, 0)} </span>|<span class="expense"> Expense: ₹${expense.reduce((sum, t) => sum + t.amount, 0)}</span>`;
 }
 
@@ -45,7 +66,7 @@ function renderTransactions(lists) {
 search.addEventListener("input", (e) => {
   const value = e.target.value.toLowerCase();
   const filter = transactions.filter((transaction) => {
-    return transaction.category.toLocaleLowerCase().includes(value);
+    return transaction.category.toLowerCase().includes(value);
   });
   renderTransactions(filter);
 });

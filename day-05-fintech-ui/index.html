@@ -59,14 +59,39 @@
       </div>
       <section class="transactions-list card card5">
         <h2 class="section-title">Recent Transactions</h2>
+        <form class="form-container" id="form-container">
+          <div>
+            <label for="category">Category</label>
+            <input
+              type="text"
+              name="category"
+              id="category"
+              placeholder="Enter Category"
+              class="category"
+            />
+          </div>
+          <div>
+            <label for="amount">Amount</label>
+            <input
+              type="number"
+              name="amount"
+              id="amount"
+              placeholder="Enter Amount"
+              class="amount"
+            />
+          </div>
+          <div>
+            <label for="type">Type</label>
+            <select name="type" id="type" class="type">
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit">Submit</button>
+        </form>
         <div id="transactions-container"></div>
       </section>
     </main>
     <script src="script.js"></script>
   </body>
 </html>
-<!--   1. The "Transaction Search" (08:00 AM – 11:00 AM)
-   * The Task: Add a search bar to your day-05-fintech-ui.
-   * The Logic: Use .filter() and .includes() to filter the transactions in real-time.
-   * Why: This proves you can handle dynamic data searching—a required skill for every Senior dev.
- -->
